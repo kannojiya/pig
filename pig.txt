@@ -1,0 +1,16 @@
+******PIG******
+>pig -x local
+grunt> bag = load '/path of file/filename.txt' using PigStorage(',') as(line:chararray);
+g> bag1 = group bag by condition;
+g> bag2 = foreach tablename bagname generate group,sum/avg/count(bagname.$1);
+g> bag3 = foreach bagname generate FLATTEN(TOKENIZER(lines)) as condition;
+g>dump bagname;
+g>store bagname into 'outdirectory';
+g>dump bagname;
+
+practicals
+1.load the data n uses of function(sum,avg,count,group,order,union,split,flatten,foreach)
+2.udf(Conver lower to upper letter) in pig
+3.cogroup
+4.wordcount
+
